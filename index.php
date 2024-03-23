@@ -105,7 +105,7 @@ $connection->close();
                         <input type="password" id="mots_de_passe" name="mots_de_passe" placeholder="ENTER password HERE">
                         <button class="btn1" href="/firemen/create.php" role="button">LOGIN</button>
                         <P>IF YOU HAVEN'T COUNT INSCRIRE PLEASE</P>
-                        <button class="btn1" href="/firemen/create.php" role="button">INSCRIPTION</button>
+                        <button class="btn1" href="/GL/create.php" role="button">INSCRIPTION</button>
         
     
 
