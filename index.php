@@ -1,62 +1,7 @@
 
-<?php
-
-//session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "bd_sapeurpompier";
-
-$matricule;
-$email;
-$password;
-
-// Create connection
-$connection = new mysqli($servername, $username, $password, $database);
-$errorMessage = $successMessage = "";
-// Check connection
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
-
-// Check if form is submitted
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $matricule = $_POST["numMatricule_fk"];
-    $email = $_POST["adressEmail"];
-    $password = $_POST["mots_de_passe"];
-
-
-    echo $matricule,$email,$password;
-    // Use prepared statements to prevent SQL injection
-    $sql = "SELECT * FROM tab_login WHERE numMatricule_fk = ? AND mots_de_passe = ? AND adressEmail = ?";
-    $stmt = $connection->prepare($sql);
-    $stmt->bind_param("sss", $matricule, $password, $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        if ($user['is_admin'] == 1) { 
-            // المستخدم مشرف (أدمن)
-            $_SESSION['numMatricule_fk'] = $matricule;
-            header("Location: /firemen/index.php");
-            exit();
-        } else if ($user['is_admin'] == 0) {
-            // المستخدم غير مشرف
-            $_SESSION['numMatricule_fk'] = $matricule;
-            header("Location: /firemen/homepagefiremen.php");
-            exit();
-        }
-    } else {
-        $errorMessage = "Invalid login credentials. Please try again.";
-    }
 
     
-}
 
-// Close connection
-$connection->close();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,11 +32,7 @@ $connection->close();
                         </ul>
                 
                     </div>
-                    <?php
-            if (!empty($errorMessage)) {
-                echo '<div class="error-message">' . $errorMessage . '</div>';
-            }
-        ?>
+                    
                     
         </div>
                     <div class="content">
@@ -103,9 +44,14 @@ $connection->close();
                         <input type="number" id="numMatricule_fk" name="numMatricule_fk" placeholder="ENTER MATRICULE HERE">
                         <input type="email" id="adressEmail" name="adressEmail" placeholder="ENTER EMAIL HERE">
                         <input type="password" id="mots_de_passe" name="mots_de_passe" placeholder="ENTER password HERE">
-                        <button class="btn1" href="/firemen/create.php" role="button">LOGIN</button>
+                        <form method="post" action="/GL/login.php">
+                             <button type="submit" class="btn1" role="button">LOGIN</button>
+                        </form>
                         <P>IF YOU HAVEN'T COUNT INSCRIRE PLEASE</P>
-                        <button class="btn1" href="/GL/create.php" role="button">INSCRIPTION</button>
+                        <form method="get" action="/GL/create.php">
+                             <button type="submit" class="btn1" role="button">INSCRIPTION</button>
+                        </form>
+                        
         
     
 
