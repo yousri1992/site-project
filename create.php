@@ -12,7 +12,7 @@ $errorMessage = $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $maticuleEtudiant=  $_POST["maticuleEtudiant"];
-    $nom = $_POST["nom "];
+    $nom = $_POST["nom"];
     $prenom  = $_POST["prenom"];
     $anneNaissance = $_POST["anneNaissance"];
     $lieuNAISSANCE = $_POST["lieuNAISSANCE"];
@@ -33,15 +33,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Additional validation if needed 
 
     if ($dataValid) {
-        // ADD NEW CENGIN TO DATABASE
+        // ADD NEW STAGER TO DATABASE
         
-        $sql = "INSERT INTO tab_engin (maticuleEtudiant, nom, prenom, anneNaissance, lieuNAISSANCE, willayaResidence, univercite, specialite, email, password ) " .
-            "VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO tab_idetudiant (maticuleEtudiant, nom, prenom, anneNaissance, lieuNAISSANCE, willayaResidence, univercite, specialite, email, password) " .
+       "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = $connection->prepare($sql);
+        if (!$stmt) {
+            die("Error in SQL query: " . $connection->error);
+        }
 
         // Bind parameters
-        $stmt->bind_param("ssssss",$maticuleEtudiant, $nom, $prenom, $anneNaissance, $lieuNAISSANCE, $willayaResidence, $univercite, $specialite, $email, $password);
+        $stmt->bind_param("ssssssssss", $maticuleEtudiant, $nom, $prenom, $anneNaissance, $lieuNAISSANCE, $willayaResidence, $univercite, $specialite, $email, $password);
         
 
         // Execute the statement
@@ -125,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">specialite</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="willayaResidence" value="<?php echo $specialite;?>">
+                    <input type="text" class="form-control" name="specialite" value="<?php echo $specialite;?>">
                 </div>
             </div>
             <div class="row mb-3">
