@@ -80,13 +80,11 @@ $connection->close();
             </div>
                    <div class="menu">
             
-                        <ul >
-                        <Li class="active"><a href="/firemen/accueil.php">HOME</a></Li>
-                        <Li class="active"><a href="/firemen/about.php">ABOUT</a></Li>
-                        <Li class="active"><a href="/firemen/service.php">SERVICE</a></Li>
-                        <Li class="active"><a href="#">CONTACT</a></Li>
-                        <Li class="active"><a href="#">HELP</a></Li>
-                        
+                   <ul >
+                        <Li class="active"><a href="/GL/index.php">HOME</a></Li>
+                        <Li class="active"><a href="/GL/about.php">ABOUT</a></Li>
+                        <Li class="active"><a href="/GL/contact.php">CONTACT</a></Li>
+                        <Li class="active"><a href="/GL/help.php">HELP</a></Li>
                         </ul>
                 
                     </div>
@@ -114,17 +112,6 @@ $connection->close();
             </div>
         </div>
     </div>
-</form>
-                        
-        
-    
-
-                    </div>
-                    </div>
-                    
-        
-        
-    </div>
-    
+</form>    
 </body>
 </html>
