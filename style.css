@@ -10,6 +10,20 @@
     background-size: cover;
     height: 120vh;
 }
+.mainA{
+    width: 100%;
+    background: linear-gradient(to top,rgba(68, 61, 61, 0.5)50%,rgba(68, 61, 61, 0.5)50%),url(stagiaire.jpeg );
+    background-position: center;
+    background-size: cover;
+    height: 120vh;
+}
+.mainC{
+    width: 100%;
+    background: linear-gradient(to top,rgba(68, 61, 61, 0.5)50%,rgba(68, 61, 61, 0.5)50%),url(centre_appel.jpg );
+    background-position: center;
+    background-size: cover;
+    height: 120vh;
+}
 
 .navbar{
     width: 1200px;
@@ -246,7 +260,7 @@ padding-right:40px;;
 }
 
 th {
-    color: white ; /* Change this to the desired color */
+    color: white ; 
     font-size: 50px;
     
     
