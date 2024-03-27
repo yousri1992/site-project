@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>contact stalgerie</title>
-    <script src="app.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg></script>
     <script>
        
     </script>
     <style>
+         
         
     </style>
 </head>
@@ -33,9 +34,57 @@
         </div>
                     <div class="content">
                     <h1>LES STAGES</h1><br><span>DISPONIBLE</span>
-                           <p class="paragraphe"> arbache1992@gmail.com</p>
-                             
+                    <div class="text1">
+            <div class="text2">
+                <div class="text3"> 
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <span>Facebook</span>
+            </div>
+
+            
+                <div class="text2">
+                    <div class="text3"> 
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <span>YouTube</span>
+                </div>
+                    
+                    
+
+                <div class="text2">
+                    <div class="text3"> 
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <span>Instagram</span>
+                </div>
+
+
+
+                <div class="text2">
+                    <div class="text3"> 
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <span>Twitter</span>
+                </div>
+
+
+                <div class="text2">
+                    <div class="text3"> 
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <span>Whatsapp</span>
+                </div>
+
+               
                     </div>
+            
+                    <div class="email">
+                    <span>contact me :</span><br><span>arbache1992@gmail.com</span>
+                     </div>    
+                    </div>
+                    
+
                     
         
         
