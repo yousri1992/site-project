@@ -80,7 +80,7 @@ $connection->close();
             </div>
                    <div class="menu">
             
-                   <ul >
+                        <ul >
                         <Li class="active"><a href="/GL/index.php">HOME</a></Li>
                         <Li class="active"><a href="/GL/about.php">ABOUT</a></Li>
                         <Li class="active"><a href="/GL/contact.php">CONTACT</a></Li>
@@ -108,7 +108,7 @@ $connection->close();
                 <input type="password" id="password" name="password" placeholder="ENTER password HERE">
                 <button type="submit" class="btn1" role="button">LOGIN</button>
                 <p>IF YOU HAVEN'T ACCOUNT, PLEASE REGISTER</p>
-                <button type="button" class="btn1" onclick="window.location.href='/GL/create.php'">INSCRIPTION</button>
+                <button type="button" class="btn1" onclick="window.location.href='/GL/choix_inscription.php'">INSCRIPTION</button>
             </div>
         </div>
     </div>

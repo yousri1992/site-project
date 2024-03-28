@@ -26,6 +26,20 @@
     background-size: cover;
     height: 120vh;
 }
+.mainH{
+    width: 100%;
+    background: linear-gradient(to top,rgba(68, 61, 61, 0.5)50%,rgba(68, 61, 61, 0.5)50%),url(help.jpg );
+    background-position: center;
+    background-size: cover;
+    height: 120vh;
+}
+.mainCI{
+    width: 100%;
+    background: linear-gradient(to top,rgba(68, 61, 61, 0.5)50%,rgba(68, 61, 61, 0.5)50%),url(choix_inscription.jpg );
+    background-position: center;
+    background-size: cover;
+    height: 120vh;
+}
 
 .navbar{
     width: 1200px;
@@ -129,11 +143,34 @@ ul li a:hover{
     background: white;
     color: #ff7200;
 }
+.btn2{
+    font-weight: bold;
+    width: 240px;
+    height: 40px;
+    background: #ff7200;
+    border:none;
+    margin-top: 80px;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(237, 235, 235);
+    transition: 0.4s ease;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 50;
+}
+.btn2:hover{
+    background: white;
+    color: #ff7200;
+}
+.btn2:focus{
+    outline: none;
+}
 .titre{
     color:  #66FF66;
-    margin-top: 120px;
-    margin-left: 28%;
-font-size: 50px;
+    margin-top: 140px;
+    margin-left: 40%;
+font-size: 60px;
 }
 .table {
     width: 100%;
