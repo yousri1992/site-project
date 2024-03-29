@@ -26,12 +26,12 @@
                     </div>
                     
         </div>
-        <div>
+        <div >
   
 
 
         <table class="table">
-        <h2 class = "titre" >who are you</h2>
+        <h2 align="center" class = "titre" >who are you</h2>
           <thead>
                 <tr>
                     <th>ETUDIANT </th>	

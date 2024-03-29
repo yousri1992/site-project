@@ -34,7 +34,7 @@
         </div>
                     <div class="content">
                     <h1>LES STAGES</h1><br><span>DISPONIBLE</span>
-                    <div class="text1">
+                    <div  class="text1">
             <div class="text2">
                 <div class="text3"> 
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -79,7 +79,7 @@
                
                     </div>
             
-                    <div class="email">
+                    <div align="center" class="email">
                     <span>contact me :</span><br><span>arbache1992@gmail.com</span>
                      </div>    
                     </div>
