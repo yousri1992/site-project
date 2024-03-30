@@ -6,30 +6,30 @@ $database = "bd_stage";
 
 // CREATE CONNECTION
 $connection = new mysqli($servername, $username, $password, $database);
-$maticuleEtudiant= $nom = $prenom = $anneNaissance = $lieuNAISSANCE = $willayaResidence = $univercite = $specialite = $email  = $password ="";
+$maticuleEtudiant= $nom = $prenom = $anneNaissance = $lieuNAISSANCE = $willayaResidence = $univercite = $specialite = $email  = $password = "";
 
 $errorMessage = $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $maticuleEtudiant= htmlspecialchars( $_POST["maticuleEtudiant"]);
-    $nom = htmlspecialchars( $_POST["nom"]);
-    $prenom  =  htmlspecialchars($_POST["prenom"]);
-    $anneNaissance = htmlspecialchars($_POST["anneNaissance"]);
-    $lieuNAISSANCE = htmlspecialchars($_POST["lieuNAISSANCE"]);
-    $willayaResidence =htmlspecialchars( $_POST["willayaResidence"]);
-    $univercite =htmlspecialchars( $_POST["univercite"]);
-    $specialite = htmlspecialchars($_POST["specialite"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $inputPassword =  $_POST["password"];
+    $maticuleEtudiant=  $_POST["maticuleEtudiant"];
+    $nom = $_POST["nom"];
+    $prenom  = $_POST["prenom"];
+    $anneNaissance = $_POST["anneNaissance"];
+    $lieuNAISSANCE = $_POST["lieuNAISSANCE"];
+    $willayaResidence = $_POST["willayaResidence"];
+    $univercite = $_POST["univercite"];
+    $specialite = $_POST["specialite"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
     $passwordConfirm = $_POST["password_confirm"]; 
 
     $dataValid = true;
 
     // Validation
-    if (empty($maticuleEtudiant) || empty($nom) || empty($prenom) || empty($anneNaissance) || empty($lieuNAISSANCE) || empty($willayaResidence)|| empty($univercite)|| empty($specialite)|| empty($email )|| empty( $inputPassword)||empty($passwordConfirm)) {
+    if (empty($maticuleEtudiant) || empty($nom) || empty($prenom) || empty($anneNaissance) || empty($lieuNAISSANCE) || empty($willayaResidence)|| empty($univercite)|| empty($specialite)|| empty($email )|| empty($password)) {
         $dataValid = false;
-        $errorMessage = "tous les champs sont <font color= 'red'>obligatoires.</font>";
-    } elseif ($inputPassword !== $passwordConfirm) {
+        $errorMessage = "Tous les champs sont obligatoires.";
+    } elseif ($password !== $passwordConfirm) {
         $dataValid = false;
         $errorMessage = "Password and confirm password do not match.";
     }
@@ -37,20 +37,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Additional validation if needed 
 
     if ($dataValid) {
-        $hashedPassword = password_hash( $inputPassword, PASSWORD_BCRYPT);
-        // ADD NEW STAGER TO DATABASE
-        
-        $sql = "INSERT INTO tab_idetudiant (maticuleEtudiant, nom, prenom, anneNaissance, lieuNAISSANCE, willayaResidence, univercite, specialite, email, password) " .
-       "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        // ADD NEW STUDENT TO DATABASE
+
+        $sql = "INSERT INTO tab_idetudiant (maticuleEtudiant, nom, prenom, anneNaissance, lieuNAISSANCE, willayaResidence, univercite, specialite, email, password ) " .
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = $connection->prepare($sql);
-        if (!$stmt) {
-            die("Error in SQL query: " . $connection->error);
-        }
 
         // Bind parameters
-        $stmt->bind_param("ssssssssss", $maticuleEtudiant, $nom, $prenom, $anneNaissance, $lieuNAISSANCE, $willayaResidence, $univercite, $specialite, $email, $hashedPassword);
-        
+        $stmt->bind_param("ssssssssss",$maticuleEtudiant, $nom, $prenom, $anneNaissance, $lieuNAISSANCE, $willayaResidence, $univercite, $specialite, $email, $password);
 
         // Execute the statement
         if ($stmt->execute()) {

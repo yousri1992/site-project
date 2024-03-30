@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else if ($user['is_admin'] == 0) {
             // المستخدم غير مشرف
             $_SESSION['maticuleEtudiant'] = $maticuleEtudiant;
-            header("Location: /GL/create.php");
+            header("Location: /GL/createE.php");
             exit();
         }
     } else {
