@@ -42,13 +42,14 @@
 }
 
 .navbar{
-    width: 1200px;
+    width: 900px;
     height: 75px;
     margin:auto;
-    padding: -2px;
+    
+   
 }
 .icon{
-    width: 500px;
+    width: 200px;
     height: 70px;
     float: left;
     
@@ -58,6 +59,7 @@
     font-size: 35px;
     font-family: Arial;
     float: left;
+    margin-left: -150px;
     
 }
 .menu{
@@ -424,7 +426,6 @@ td{
 .text1 .text2:nth-child(5) span{
     color: #058f2e;
 }
-
 
 
 
