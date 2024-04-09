@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    
     <title>about stalgerie</title>
-    <script src="app.js"></script>
+    <?php
+            
+            require_once('_header/script.php');
+            require_once('_header/link.php');
+            require_once('_header/meta.php');
+        ?>
+    
     <script>
         function searchInParagraph() {
             var searchTerm = document.getElementById("searchInput").value.toLowerCase();
@@ -31,25 +36,15 @@
 <body>
 <form method="post">
     <div class="mainA">
-        <div class="navbar">
-        <div class="icon">  
-                <h2 class="logo">STALGERIE</h2>    
-            </div>
-                   <div class="menu">
+    <?php
             
-                        <ul >
-                        <Li class="active"><a href="/GL/index.php">HOME</a></Li>
-                        <Li class="active"><a href="/GL/about.php">ABOUT</a></Li>
-                        <Li class="active"><a href="/GL/contact.php">CONTACT</a></Li>
-                        <Li class="active"><a href="/GL/help.php">HELP</a></Li>
-                        </ul>
-                
-                    </div>
+            require_once('_menu/menu.php');
+        ?>
                     <div class="search">
                 <input class="srch" type="search" id="searchInput" name="" placeholder="Type To Text">
                 <button type="button" class="btn" onclick="searchInParagraph()">Search</button>
             </div>
-        </div>
+        
                     <div class="content">
                     <h1>LES STAGES</h1><br><span>DISPONIBLE</span>
                            <p class="paragraphe">This website was created by a group of students for the purpose of facilitating the search for training opportunities before completing their studies
@@ -70,6 +65,9 @@ During the training experience, the company builds a CV about the student throug
     
     
     </form>
-  
+    <?php
+            
+            require_once('_footer/footer.php');
+    ?> 
 </body>
 </html>

@@ -2,11 +2,7 @@
 <?php
 
 require_once('include.php');
-if (isset($_SESSION['ID_etudiant'])) {
-    $var1 = "bonjour yousri" . $_SESSION['email'];
-}else{
-    $var1 = "bonjour a tous";
-}
+
 
 
 
@@ -40,8 +36,8 @@ if (isset($_SESSION['ID_etudiant'])) {
        
        
             <div class="content">
-                <h1>LES STAGES</h1>
-                <span>DISPONIBLE</span>
+                <h1>MY FIRST</h1>
+                <span>STAGE</span>
                 <br>
                 
             </div>

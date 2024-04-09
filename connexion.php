@@ -57,8 +57,8 @@ if (!empty($_POST)) {
         ?>
        
             <div class="content">
-                <h1>LES STAGES</h1>
-                <span>DISPONIBLE</span>
+                <h1>MY FIRST</h1>
+                <span>STAGE</span>
                 <br>
                
                 <div class="form">
@@ -67,7 +67,7 @@ if (!empty($_POST)) {
                     <input type="password" id="password" name="password" placeholder="ENTER password HERE">
                     <button type="submit" name="connexion" class="btn1" role="button">LOGIN</button>
                     <p>IF YOU HAVEN'T ACCOUNT, PLEASE REGISTER</p>
-                    <button type="button" class="btn1" onclick="window.location.href='/GL/choix_inscription.php'">INSCRIPTION</button>
+                    <button type="button" class="btn1" onclick="window.location.href='/GLT/choix_inscription.php'">INSCRIPTION</button>
                 </div>
             </div>
         </div>

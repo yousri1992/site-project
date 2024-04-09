@@ -2,7 +2,7 @@
 
 require_once('include.php');
 if (isset($_SESSION['ID_entreprise'])) {
-    header("Location: /GLT/index.php");
+    header("Location: /GLT/connexion.php");
                 exit; 
 }
 
@@ -103,7 +103,7 @@ if (!empty($_POST)) {
                     <button type="submit" name="inscription" class="btn btn-primary">inscription</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/GL/createEN.php" role="button">Annuler</a>
+                    <a class="btn btn-outline-primary" href="/GLT/index.php" role="button">Annuler</a>
                 </div>
             </div>
         </form>
