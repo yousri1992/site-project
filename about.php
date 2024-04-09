@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+<link rel="stylesheet" href="style.css">
     <title>about stalgerie</title>
     <?php
             
             require_once('_header/script.php');
-            require_once('_header/link.php');
             require_once('_header/meta.php');
         ?>
     
