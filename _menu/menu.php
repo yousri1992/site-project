@@ -8,9 +8,7 @@ $var = "STALGERIE";
     </div>
     <div class="menu">
         <ul>
-            <li class="active"><a href="/GLT/about.php">ABOUT</a></li>
-            <li class="active"><a href="/GLT/contact.php">CONTACT</a></li>
-            <li class="active"><a href="/GLT/help.php">HELP</a></li>
+            
             <?php
             if (!isset($_SESSION['ID_etudiant']) && !isset($_SESSION['ID_entreprise'])) {
             ?>
@@ -22,6 +20,9 @@ $var = "STALGERIE";
             <?php
             }
             ?>
+            <li class="active"><a href="/GLT/about.php">ABOUT</a></li>
+            <li class="active"><a href="/GLT/contact.php">CONTACT</a></li>
+            <li class="active"><a href="/GLT/help.php">HELP</a></li>
         </ul>
     </div>
 </div>
