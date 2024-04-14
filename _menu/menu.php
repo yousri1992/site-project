@@ -31,15 +31,46 @@ $var = "STALGERIE";
     <?php
     if (isset($_SESSION['ID_etudiant']) || isset($_SESSION['ID_entreprise'])) {
     ?>
-        <button class="btn1" href="/firemen/service.php" role="button">
-            <?php
-            if (isset($_SESSION['ID_etudiant'])) {
-                echo "LES STAGES";
-            } elseif (isset($_SESSION['ID_entreprise'])) {
-                echo "LES DEMANDES DE STAGE";
-            }
-            ?>
-        </button>
+        
+
+
+        <a class="btn2" href="/GLT/lesStage.php" role="button">
+    <?php
+    if (isset($_SESSION['ID_etudiant'])) {
+        echo "LES STAGES";
+    }
+    
+    ?>
+</a>
+
+
+
+        <a class="btn2" href="/GLT/creeStage.php" role="button">
+    <?php
+    if (isset($_SESSION['ID_entreprise'])) {
+        echo "CREE UN STAGE";
+    }
+    
+    ?>
+</a>
+
+<a class="btn2" href="/GLT/creeStage.php" role="button">
+    <?php
+   
+    if (isset($_SESSION['ID_entreprise'])) {
+        echo "LES DEMANDES ";
+    }
+    ?>
+</a>
+
+<a class="btn2" href="/GLT/voirEditDelite.php" role="button">
+    <?php
+   
+    if (isset($_SESSION['ID_entreprise'])) {
+        echo "modifier stages ";
+    }
+    ?>
+</a>
     <?php
     }
     ?>
