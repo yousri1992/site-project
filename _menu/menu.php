@@ -34,7 +34,7 @@ $var = "STALGERIE";
         
 
 
-        <a class="btn2" href="/GLT/lesStage.php" role="button">
+        <a class="btn2" href="/GLT/lesstages.php" role="button">
     <?php
     if (isset($_SESSION['ID_etudiant'])) {
         echo "LES STAGES";
@@ -45,7 +45,7 @@ $var = "STALGERIE";
 
 
 
-        <a class="btn2" href="/GLT/creeStage.php" role="button">
+        <a class="btn2" href="/GLT/voirEditDelite.php" role="button">
     <?php
     if (isset($_SESSION['ID_entreprise'])) {
         echo "CREE UN STAGE";
@@ -63,14 +63,7 @@ $var = "STALGERIE";
     ?>
 </a>
 
-<a class="btn2" href="/GLT/voirEditDelite.php" role="button">
-    <?php
-   
-    if (isset($_SESSION['ID_entreprise'])) {
-        echo "modifier stages ";
-    }
-    ?>
-</a>
+
     <?php
     }
     ?>
