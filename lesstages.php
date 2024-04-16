@@ -59,7 +59,7 @@ require_once('_header/link.php');
                         <td><?php echo htmlspecialchars($row['date_fin']); ?></td>
                         <td><?php echo htmlspecialchars($row['date_creation']); ?></td>							
                         <td>
-                            <a class='btn btn-primary btn-sm' href='/GLT/edit.php?id_stage=<?php echo $row['id_stage']; ?>'>INSCRIRE</a>
+                            <a class='btn btn-primary btn-sm' href='/GLT/demande.php?id_stage=<?php echo $row['id_stage']; ?>'>demander</a>
                             
                         </td>
                     </tr>
