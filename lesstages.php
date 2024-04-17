@@ -59,7 +59,21 @@ require_once('_header/link.php');
                         <td><?php echo htmlspecialchars($row['date_fin']); ?></td>
                         <td><?php echo htmlspecialchars($row['date_creation']); ?></td>							
                         <td>
-                            <a class='btn btn-primary btn-sm' href='/GLT/demande.php?id_stage=<?php echo $row['id_stage']; ?>'>demander</a>
+
+                        <?php
+                                // Vérifier si une demande existe déjà pour ce stage et cet utilisateur
+                                $id_stage = $row['id_stage'];
+                                $sql_check = "SELECT * FROM tab_demande WHERE matriculeEtudiant_fk = '{$_SESSION['matriculeEtudiant']}' AND id_stage_fk = '$id_stage'";
+                                $result_check = $connection->query($sql_check);
+                                if ($result_check->num_rows > 0) {
+                                    // Une demande existe déjà pour ce stage et cet utilisateur
+                                    echo "<span class='text-danger'>Vous avez déjà demandé ce stage. Attendez la réponse de l'entreprise.</span>";
+                                } else {
+                                    // Afficher le bouton de demande
+                                    echo "<a class='btn btn-primary btn-sm' href='/GLT/demande.php?id_stage=$id_stage'>demander</a>";
+                                }
+                            ?>
+
                             
                         </td>
                     </tr>
