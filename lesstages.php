@@ -10,8 +10,10 @@ require_once('_header/link.php');
 <title>Liste des stages</title>
 </head>
 <body>
+
     <div class="container my-5">
-        <h2>Liste des stages</h2>
+    
+        <h2>Liste des stages disponible</h2>
         <br>
         <table class="table">
             <thead>
@@ -77,12 +79,18 @@ require_once('_header/link.php');
                             
                         </td>
                     </tr>
+                   
+
                 <?php
                 }
                 ?>
             </tbody>
         </table>
+        <a class="btn btn-outline-primary" href="/GLT/index.php" role="button">RETOUR</a>
+
+
     </div>
+   
 </body>
 </html>
 
