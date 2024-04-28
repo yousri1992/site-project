@@ -21,27 +21,28 @@ if (isset($_SESSION['ID_entreprise'])) {
     
     // Requête SQL pour récupérer les demandes des étudiants liées aux postes de stage créés par l'entreprise avec la session ouverte
     $sql = "SELECT
-                td.id_demande, 
-                ti.nom,
-                ti.prenom,
-                ti.date_naissance,
-                ti.WILLAYA_residence,
-                ti.specialite AS 'specialite d etude',
-                ps.specialite_demande AS 'la specialite demande',
-                ti.email,
-                td.date_demande,
-                ps.date_debut,
-                ps.date_fin
-            FROM 
-                tab_demande td
-            JOIN 
-                tab_idetudiant ti ON td.matriculeEtudiant_fk = ti.matriculeEtudiant
-            JOIN 
-                poste_stage ps ON td.id_stage_fk = ps.id_stage
-            JOIN
-                tab_identreprise ie ON ps.numeroRCommerce_fk = ie.numeroRCommerce
-            WHERE
-                ps.numeroRCommerce_fk = ?";
+    td.id_demande, 
+    ti.nom,
+    ti.prenom,
+    ti.date_naissance,
+    ti.WILLAYA_residence,
+    ti.specialite AS 'specialite d etude',
+    ps.specialite_demande AS 'la specialite demande',
+    ti.email,
+    td.date_demande,
+    ps.date_debut,
+    ps.date_fin,
+    td.etat_demande
+FROM 
+    tab_demande td
+JOIN 
+    tab_idetudiant ti ON td.matriculeEtudiant_fk = ti.matriculeEtudiant
+JOIN 
+    poste_stage ps ON td.id_stage_fk = ps.id_stage
+JOIN
+    tab_identreprise ie ON ps.numeroRCommerce_fk = ie.numeroRCommerce
+WHERE
+    ps.numeroRCommerce_fk = ?";
            
 
     
@@ -80,13 +81,15 @@ if (isset($_SESSION['ID_entreprise'])) {
                             <th>Date de demande</th>
                             <th>Date de début</th>
                             <th>Date de fin</th>
-                            <th>Actions</th>
+                            <th>Actions1</th>
+                            <th>Actions2</th>
                         </tr>
                     </thead>
                     <tbody>
 <?php
             while ($row = $result->fetch_assoc()) {
                 // Afficher les données dans le tableau
+                $etat_demande = $row['etat_demande'];
 ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['id_demande']); ?></td>
@@ -101,9 +104,28 @@ if (isset($_SESSION['ID_entreprise'])) {
                             <td><?php echo htmlspecialchars($row['date_debut']); ?></td>
                             <td><?php echo htmlspecialchars($row['date_fin']); ?></td>
                             <td>
-                                <a class='btn btn-primary btn-sm' href='/GLT/demande.php?id_stage=<?php echo $row['id_demande']; ?>'>confermer</a>
-                                <a class='btn btn-primary btn-sm' href='/GLT/demande.php?id_stage=<?php echo $row['id_demande']; ?>'>annuler</a>
+                            
+                        <?php
+                                $id_demande = $row['id_demande'];
+                                echo "<a class='btn btn-success' href='/GLT/laReponce.php?id_demande=$id_demande'>confirmer</a>";
+                                if ($etat_demande == 1 ) {
+                                    echo "<span class='text-danger'>Vous avez déjà rCONFIRMER.</span>";
+                                }
+                                   
+                            ?>
+
                             </td>
+                            <td>
+                            <?php
+                                $id_demande = $row['id_demande'];
+                                    
+                                    echo "<a class='btn btn-danger' href='/GLT/laReponce.php?id_demande=$id_demande'>ANNULER</a>";
+                                    if ($etat_demande == 2) {
+                                        echo "<span class='text-danger'>Vous avez déjà ANNULER.</span>";
+                                    }
+                            ?>                            </td>
+
+                       
                         </tr>
 <?php
             }

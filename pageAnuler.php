@@ -38,7 +38,7 @@ if ($stmt) {
         $connection->close();
         
         // Redirection vers la page d'affichage des demandes après la confirmation
-        header("location: /GLT/laCause.php");
+        header("location: /GLT/laReponce.php");
         exit;
     } else {
         // Afficher un message de confirmation

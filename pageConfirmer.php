@@ -37,20 +37,22 @@ if ($stmt) {
         $connection->close();
         
         // Redirection vers la page d'affichage des demandes après la confirmation
-        header("location: /GLT/leDocier.php");
-        exit;
-    } else {
+        header("location: /GLT/laReponce.php");
+        
+
         // Afficher un message de confirmation
         echo "
         <script>
         var confirmed = confirm('Êtes-vous sûr de vouloir ajouter cette demande ?');
         if (confirmed) {
-            window.location.href = '/GLT/pageConfirmer.php?id_demande=$id_demande&confirm=true';
+            window.location.href = '/GLT/laReponce.php?id_demande=$id_demande&confirm=true';
         } else {
             window.location.href = '/GLT/index.php';
         }
         </script>
         ";
+       
     }
+    
 }
 ?>

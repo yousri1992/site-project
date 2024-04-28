@@ -54,7 +54,7 @@ $var = "STALGERIE";
     ?>
 </a>
 
-<a class="btn2" href="/GLT/creeStage.php" role="button">
+<a class="btn2" href="/GLT/afficherDemande.php" role="button">
     <?php
    
     if (isset($_SESSION['ID_entreprise'])) {
