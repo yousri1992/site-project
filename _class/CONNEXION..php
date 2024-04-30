@@ -2,12 +2,10 @@
     class Connexion {
         private $isValid;
         private $errorMessage;
-        
         public function verification_connexionE($email, $password){
             global $DB;
             $email = trim($email);
             $password = trim($password);
-
             $this->isValid = true;
 
             if (empty($email) || empty($password)) {
