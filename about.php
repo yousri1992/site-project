@@ -11,9 +11,9 @@
     
     <script>
         function searchInParagraph() {
-            var searchTerm = document.getElementById("searchInput").value.toLowerCase();
-            var paragraphText = document.querySelector('.paragraphe').innerText.toLowerCase();
-            var foundIndex = paragraphText.indexOf(searchTerm);
+        var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+        var paragraphText = document.querySelector('.paragraphe').innerText.toLowerCase();
+        var foundIndex = paragraphText.indexOf(searchTerm);
 
             if (foundIndex !== -1) {
                 var foundText = document.querySelector('.paragraphe').childNodes[0].splitText(foundIndex + searchTerm.length);
@@ -66,7 +66,7 @@ During the training experience, the company builds a CV about the student throug
     </form>
     <?php
             
-            require_once('_footer/footer.php');
+       require_once('_footer/footer.php');
     ?> 
 </body>
 </html>
