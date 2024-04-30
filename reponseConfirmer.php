@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    
     <title>Réponse </title>
     <?php require_once('_header/script.php'); ?>
     <?php require_once('_header/link.php'); ?>
     <?php require_once('_header/meta.php'); ?>
 </head>
+    
 <body style="background:#000709e6; color:#fff;">
     <div align="center" class="container my-5">
         <h1>Réponse </h1>
