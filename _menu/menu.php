@@ -5,9 +5,10 @@ $var = "STALGERIE";
 <div class="navbar">
     <div class="icon">
         <h2 class="logo"><?php echo $var ?></h2>
+        
     </div>
     <div class="menu">
-        <ul>
+        <u1>
             
             <?php
             if (!isset($_SESSION['ID_etudiant']) && !isset($_SESSION['ID_entreprise'])) {
